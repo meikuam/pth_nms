@@ -46,7 +46,7 @@ int gpu_nms(
     float* boxes_flat = boxes.data<float>();
 
     const int col_blocks = DIVUP(boxes_num, threadsPerBlock);
-    torch::Tensor mask = torch::zeros({boxes_num, col_blocks}, torch::device(torch::kCUDA).dtype(torch::kLong));
+    torch::Tensor mask = torch::zeros({boxes_num, col_blocks}, torch::TensorOptions().dtype(torch::kLong).device(torch::kCUDA, boxes.device().index()));
     unsigned long* mask_flat = (unsigned long*)mask.data<long>();
 
     _nms(boxes_num, boxes_flat, mask_flat, nms_overlap_thresh);

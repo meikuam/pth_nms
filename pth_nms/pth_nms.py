@@ -25,13 +25,13 @@ def pth_nms(dets, thresh):
 
         return keep[:num_out[0]]
     else:
-        x1 = dets[:, 0]
-        y1 = dets[:, 1]
-        x2 = dets[:, 2]
-        y2 = dets[:, 3]
+        # x1 = dets[:, 0]
+        # y1 = dets[:, 1]
+        # x2 = dets[:, 2]
+        # y2 = dets[:, 3]
         scores = dets[:, 4]
 
-        areas = (x2 - x1 + 1) * (y2 - y1 + 1)
+        # areas = (x2 - x1 + 1) * (y2 - y1 + 1)
         order = scores.sort(0, descending=True)[1]
 
         dets = dets[order].contiguous()

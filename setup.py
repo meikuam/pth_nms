@@ -25,7 +25,7 @@ setup(
     description='PyTorch version of non maximum suppression from: https://github.com/rbgirshick/py-faster-rcnn/tree/master/lib/nms',
     author='Ross Girshick, Shaoqing Ren',
     url='https://github.com/meikuam/pth_nms',
-    version='0.0.1',
+    version='0.0.2',
     packages=find_packages(exclude=('tests',)),
 
     ext_modules=modules,
