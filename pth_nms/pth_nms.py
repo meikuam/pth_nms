@@ -41,4 +41,4 @@ def pth_nms(dets, thresh):
 
         nms_gpu(keep, num_out, dets, thresh)
 
-        return order[keep[:num_out[0]].cuda()].contiguous()
+        return order[keep[:num_out[0]].to(dets.device)].contiguous()
